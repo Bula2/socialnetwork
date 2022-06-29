@@ -15,6 +15,7 @@ const MyPosts = () => {
                 <ul>
                     <Post/>
                     <Post/>
+                    <Post/>
                 </ul>
             </div>
         </div>
