@@ -1,0 +1,15 @@
+@import "../../../../variables";
+
+.item {
+  margin-bottom: 10px;
+  font-size: 1.3em;
+  list-style-type: none;
+  border-bottom: 1.5px solid black;
+  width: 91%;
+
+  &::before {
+    content: '\26D4';
+    margin-right: 5px;
+    color: #9ce7a8;
+  }
+}

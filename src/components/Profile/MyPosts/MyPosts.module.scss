@@ -1,0 +1,48 @@
+@import "../../../variables";
+
+.make_posts {
+  margin: 40px 0 0 30px;
+
+  span {
+    margin-left: 4px;
+    font-size: 1.9em;
+  }
+
+  textarea {
+    margin-top: 10px;
+    max-width: 90%;
+    min-width: 90%;
+    min-height: 50px;
+    outline: none;
+    border-radius: 5px;
+    border: 1.5px solid #000000;
+    background: $main-color;
+    color: black;
+    font-size: 1.2em;
+    padding: 4px;
+
+    &::placeholder {
+      color: #968b8b;
+    }
+  }
+
+  button {
+    float: right;
+    margin: 5px 8.8% 0 0;
+    width: 100px;
+    height: 40px;
+    background: #9ce7a8;
+    border: 1.5px solid #151313;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+
+    &:hover{
+      border: 2px solid #151313;
+    }
+  }
+}
+
+.posts {
+  margin: 80px 0 40px 40px;
+}

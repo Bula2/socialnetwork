@@ -1,0 +1,14 @@
+@import "../../variables";
+
+.footer {
+  grid-area: footer;
+  background-color: $back-color;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+}
+
+.footer_text{
+  align-self: center;
+  font-size: 1.4em;
+}
