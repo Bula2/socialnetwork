@@ -1,9 +1,7 @@
 @import "../../variables";
 
 .content {
-  grid-area: content;
-  background-color: $back-color;
-  border-radius: 5px;
+  @include content;
 }
 
 

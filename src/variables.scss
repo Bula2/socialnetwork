@@ -1,2 +1,8 @@
 $back-color: #c08bee;
 $main-color: #e5c8ee;
+
+@mixin content {
+  grid-area: content;
+  background-color: $back-color;
+  border-radius: 5px;
+}
