@@ -1,12 +1,13 @@
 import cls from "./Header.module.scss";
+import {NavLink} from "react-router-dom";
 
 const Header = () => {
     return (
         <header className={cls.header}>
-            <a href="/"><img src="/img/logo.png" alt="Slave" title="Slave"/></a>
+            <NavLink to="/"><img src="/img/logo.png" alt="Slave" title="Slave"/></NavLink>
             <div className={cls.header__auth}>
-                <a href="/" title="Зарегестрироваться">Регистрация</a>
-                <a href="/" title="Войти">Вход</a>
+                <NavLink to="/" title="Зарегестрироваться">Регистрация</NavLink>
+                <NavLink to="/" title="Войти">Вход</NavLink>
             </div>
         </header>
     );

@@ -1,11 +1,12 @@
 import cls from "./Post.module.scss";
+import {NavLink} from "react-router-dom";
 
 const Post = (props) => {
     return (
         <div className={cls.post}>
             <li className={cls.item}>
-                <a href="src/components/Profile/Profile#">{props.message}</a>
-                <a href="#" className={cls.likes}>&#128077;{props.likes}</a>
+                <NavLink to="/profile">{props.message}</NavLink>
+                <NavLink to="/profile" className={cls.likes}>&#128077;{props.likes}</NavLink>
             </li>
         </div>
     );

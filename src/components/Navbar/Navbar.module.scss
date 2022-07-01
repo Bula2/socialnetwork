@@ -13,6 +13,14 @@
       border-bottom: 1.5px solid black;
       transition: 0.1s ease;
     }
+
+    a.active{
+      color: #504f4f;
+      &:hover{
+        border-bottom: 1.5px solid #504f4f;
+        transition: 0.1s ease;
+      }
+    }
   }
 }
 

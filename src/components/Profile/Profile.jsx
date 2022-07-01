@@ -1,5 +1,6 @@
 import cls from "./Profile.module.scss";
 import MyPosts from "./MyPosts/MyPosts";
+import {NavLink} from "react-router-dom";
 
 const Profile = () => {
     return (
@@ -9,7 +10,7 @@ const Profile = () => {
                 <img className={cls.avatar} src="/img/avatar.jpg" alt="Аватарка"/>
                 </div>
                 <div className={cls.person_info}>
-                    <a href="src/components/Profile/Profile#" title="Это я">Бимасик Дулаев</a>
+                    <NavLink to="/profile" title="Это я">Бимасик Дулаев</NavLink>
                     <div className={cls.person_main_info}>
                         <span>День рождения: 1 апреля</span>
                         <span>Город: Санкт-Петербург</span>
