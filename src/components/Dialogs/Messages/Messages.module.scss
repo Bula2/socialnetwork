@@ -1,11 +1,8 @@
 @import "../../../variables";
 
-.messages {
-  padding: 10px;
-
-  .message {
-    margin-bottom: 10px;
-    border: 1px solid $main-color;
-    border-radius: 5px;
-  }
+.message {
+  grid-area: message;
+  margin-bottom: 10px;
+  border: 1px solid $main-color;
+  border-radius: 5px;
 }

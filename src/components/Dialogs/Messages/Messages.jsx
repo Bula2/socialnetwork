@@ -1,11 +1,9 @@
 import cls from "./Messages.module.scss"
 
-const Messages = () =>{
+const Messages = (props) =>{
     return(
-        <div className={cls.messages}>
-            <div className={cls.message}>Привет</div>
-            <div className={cls.message}>Пока</div>
-            <div className={cls.message}>Куку</div>
+        <div>
+            <div className={cls.message}>{props.message}</div>
         </div>
     );
 }
