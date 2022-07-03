@@ -3,11 +3,12 @@ import MyPosts from "./MyPosts/MyPosts";
 import {NavLink} from "react-router-dom";
 import ProfileInfo from "./ProfileInfo/ProfileInfo";
 
-const Profile = () => {
+const Profile = (props) => {
+
     return (
         <div className={cls.content}>
             <ProfileInfo/>
-            <MyPosts/>
+            <MyPosts postData={props.state.postData}/>
         </div>
     );
 }
