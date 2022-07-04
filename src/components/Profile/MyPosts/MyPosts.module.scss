@@ -10,9 +10,9 @@
 
   textarea {
     margin-top: 10px;
-    max-width: 90%;
-    min-width: 90%;
-    min-height: 50px;
+    resize: none;
+    width: 90%;
+    height: 50px;
     outline: none;
     border-radius: 5px;
     border: 1.5px solid #000000;
