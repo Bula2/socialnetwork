@@ -1,4 +1,5 @@
 import cls from "./Dialogs.module.scss";
+import React from "react";
 import {NavLink} from "react-router-dom";
 import DialogItem from "./DiaolgItem/DialogItem";
 import Messages from "./Messages/Messages";
@@ -7,6 +8,17 @@ const Dialogs = (props) => {
     let dialogsElements = props.dialogsPage.dialogsData.map(dialog => <DialogItem name={dialog.name} id={dialog.id}/>);
 
     let messagesElements = props.dialogsPage.messagesData.map(message => <Messages message={message}/>);
+
+    let newMesEl = React.createRef();
+
+    let addMes = () =>{
+        props.addMes();
+    }
+
+    let onMesChange = () =>{
+        let text = newMesEl.current.value;
+        props.updateNewMesText(text);
+    }
 
     return (
         <div className={cls.dialogs}>
@@ -19,8 +31,8 @@ const Dialogs = (props) => {
                 {messagesElements}
                 </div>
                 <div className={cls.message_input}>
-                    <textarea title="Отправить" placeholder="Сообщение"/>
-                    <button>Отправить</button>
+                    <textarea onChange={onMesChange} title="Отправить" placeholder="Сообщение" ref={newMesEl} value={props.dialogsPage.newMesText} />
+                    <button onClick={addMes}>Отправить</button>
                 </div>
             </div>
         </div>

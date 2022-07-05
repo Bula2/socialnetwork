@@ -11,9 +11,9 @@ let state = {
         ],
         messagesData: [
             {id: 1, avatar:"/img/f2.jpg", name: "Техник", message: "И привет"},
-            {id: 2, avatar:"/img/avatar.jpg", name: "Техник", message: "И пока"},
+            {id: 2, avatar:"/img/avatar.jpg", name: "Булай", message: "И пока"},
             {id: 3, avatar:"/img/f2.jpg", name: "Техник", message: "И все, такие дела"},
-            {id: 4, avatar:"/img/avatar.jpg", name: "Техник", message: "После нас останиться лишь мусор"},
+            {id: 4, avatar:"/img/avatar.jpg", name: "Булай", message: "После нас останиться лишь мусор"},
             {
                 id: 5,avatar:"/img/f2.jpg", name: "Техник", message: "Наша культура — мусор, наше искусство — мусор, " +
                     "Разноцветные стекляшки и блестящие бусы, " +
@@ -22,7 +22,8 @@ let state = {
                     "И стать маленьким принцем, а не диванным рыцарем, " +
                     "Тешить своё любопытство, а не только быт свой."
             },
-        ]
+        ],
+        newMesText: ""
 
     },
     profilePage:{
@@ -44,6 +45,12 @@ let state = {
     }
 };
 
+export let updateNewPostText = (newText) =>{
+    state.profilePage.newPostText = newText;
+    rerenderEntireTree(state);
+}
+
+
  export let addPost = () =>{
     let newPost = {
         id: 5,
@@ -55,8 +62,20 @@ let state = {
     rerenderEntireTree(state);
 }
 
-export let updateNewPostText = (newText) =>{
-    state.profilePage.newPostText = newText;
+ export let updateNewMesText = (newText) =>{
+    state.dialogsPage.newMesText = newText;
+    rerenderEntireTree(state);
+}
+
+export let addMes = () => {
+    let newMes = {
+        id: 6,
+        avatar:"/img/avatar.jpg",
+        name: "Булай",
+        message: state.dialogsPage.newMesText
+    };
+    state.dialogsPage.messagesData.push(newMes);
+    state.dialogsPage.newMesText="";
     rerenderEntireTree(state);
 }
 
