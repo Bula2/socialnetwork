@@ -1,3 +1,5 @@
+import {rerenderEntireTree} from "../render";
+
 let state = {
     dialogsPage:{
         dialogsData: [
@@ -9,9 +11,9 @@ let state = {
         ],
         messagesData: [
             {id: 1, avatar:"/img/f2.jpg", name: "Техник", message: "И привет"},
-            {id: 2, avatar:"/img/f2.jpg", name: "Техник", message: "И пока"},
+            {id: 2, avatar:"/img/avatar.jpg", name: "Техник", message: "И пока"},
             {id: 3, avatar:"/img/f2.jpg", name: "Техник", message: "И все, такие дела"},
-            {id: 4, avatar:"/img/f2.jpg", name: "Техник", message: "После нас останиться лишь мусор"},
+            {id: 4, avatar:"/img/avatar.jpg", name: "Техник", message: "После нас останиться лишь мусор"},
             {
                 id: 5,avatar:"/img/f2.jpg", name: "Техник", message: "Наша культура — мусор, наше искусство — мусор, " +
                     "Разноцветные стекляшки и блестящие бусы, " +
@@ -30,7 +32,8 @@ let state = {
             {id: 3, post: "Причем так много", likes: 8},
             {id: 4, post: "Что ты мог подумать - это в тенге", likes: 16},
             {id: 5, post: "Проснись и пой, везёт, если тупой", likes: 32},
-        ]
+        ],
+        newPostText: ""
     },
     navbarPage:{
         friendsData:[
@@ -40,5 +43,22 @@ let state = {
         ]
     }
 };
+
+ export let addPost = () =>{
+    let newPost = {
+        id: 5,
+        post: state.profilePage.newPostText,
+        likes: 0
+    };
+    state.profilePage.postData.unshift(newPost);
+    state.profilePage.newPostText ='';
+    rerenderEntireTree(state);
+}
+
+export let updateNewPostText = (newText) =>{
+    state.profilePage.newPostText = newText;
+    rerenderEntireTree(state);
+}
+
 
 export default state;

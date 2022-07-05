@@ -1,12 +1,11 @@
 @import "../../../../variables";
 
 .item {
+  word-wrap: break-word;
   margin-bottom: 10px;
   font-size: 1.3em;
-  list-style-type: none;
   border-bottom: 1.5px solid black;
-  width: 91%;
-
+  width: 90%;
 
   img{
     width: 28px;
@@ -24,7 +23,4 @@
     font-size: 0.75em;
   }
 
-  &::before {
-    content: none;
-  }
 }
