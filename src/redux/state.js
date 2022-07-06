@@ -1,3 +1,8 @@
+const ADD_POST = "ADD-POST";
+const UPDATE_NEW_POST_TEXT = "UPDATE_NEW_POST_TEXT";
+const ADD_MES = "ADD-MES";
+const UPDATE_NEW_MES_TEXT = "UPDATE_NEW_MES_TEXT";
+
 let store = {
     _state: {
         dialogsPage: {
@@ -46,43 +51,57 @@ let store = {
             ]
         }
     },
+    _callSubscriber() {},
     getState() {
       return this._state;
     },
-    _callSubscriber() {},
-    updateNewPostText(newText) {
-        this._state.profilePage.newPostText = newText;
-        this._callSubscriber(this._state);
-    },
-    addPost() {
-        let newPost = {
-            id: 5,
-            post: this._state.profilePage.newPostText,
-            likes: 0
-        };
-        this._state.profilePage.postData.unshift(newPost);
-        this._state.profilePage.newPostText = '';
-        this._callSubscriber(this._state);
-    },
-    updateNewMesText(newText) {
-        this._state.dialogsPage.newMesText = newText;
-        this._callSubscriber(this._state);
-    },
-    addMes() {
-        let newMes = {
-            id: 6,
-            avatar: "/img/avatar.jpg",
-            name: "Булай",
-            message: this._state.dialogsPage.newMesText
-        };
-        this._state.dialogsPage.messagesData.push(newMes);
-        this._state.dialogsPage.newMesText = "";
-        this._callSubscriber(this._state);
-    },
     subscribe(observer) {
         this._callSubscriber = observer;
+    },
+    dispatch(action) {
+        debugger;
+        if (action.type === ADD_POST){
+            let newPost = {
+                id: 5,
+                post: this._state.profilePage.newPostText,
+                likes: 0
+            };
+            this._state.profilePage.postData.unshift(newPost);
+            this._state.profilePage.newPostText = '';
+            this._callSubscriber(this._state);
+        }
+        else if (action.type === UPDATE_NEW_POST_TEXT){
+            this._state.profilePage.newPostText = action.newText;
+            this._callSubscriber(this._state);
+        }
+        else if (action.type === ADD_MES){
+            let newMes = {
+                id: 6,
+                avatar: "/img/avatar.jpg",
+                name: "Булай",
+                message: this._state.dialogsPage.newMesText
+            };
+            this._state.dialogsPage.messagesData.push(newMes);
+            this._state.dialogsPage.newMesText = "";
+            this._callSubscriber(this._state);
+        }
+        else if (action.type === UPDATE_NEW_MES_TEXT){
+            this._state.dialogsPage.newMesText = action.newText;
+            this._callSubscriber(this._state);
+        }
     }
 }
+
+export const addPostActionCreator = () => ({ type: ADD_POST})
+
+export const updateNewPostActionCreator = (text) =>
+    ({type : UPDATE_NEW_POST_TEXT, newText : text })
+
+export const addMesActionCreator = () => ({type: ADD_MES})
+
+export const updateNewMesActionCreator = (text) =>
+    ({type : UPDATE_NEW_MES_TEXT, newText : text })
+
 
 export default store;
 window.store = store;

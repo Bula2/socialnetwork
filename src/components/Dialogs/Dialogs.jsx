@@ -3,6 +3,7 @@ import React from "react";
 import {NavLink} from "react-router-dom";
 import DialogItem from "./DiaolgItem/DialogItem";
 import Messages from "./Messages/Messages";
+import {addMesActionCreator, updateNewMesActionCreator} from "../../redux/state";
 
 const Dialogs = (props) => {
     let dialogsElements = props.dialogsPage.dialogsData.map(dialog => <DialogItem name={dialog.name} id={dialog.id}/>);
@@ -12,12 +13,13 @@ const Dialogs = (props) => {
     let newMesEl = React.createRef();
 
     let addMes = () =>{
-        props.addMes();
+        debugger;
+        props.dispatch(addMesActionCreator());
     }
 
     let onMesChange = () =>{
         let text = newMesEl.current.value;
-        props.updateNewMesText(text);
+        props.dispatch(updateNewMesActionCreator(text));
     }
 
     return (
