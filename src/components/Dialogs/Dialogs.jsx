@@ -3,22 +3,20 @@ import React from "react";
 import {NavLink} from "react-router-dom";
 import DialogItem from "./DiaolgItem/DialogItem";
 import Messages from "./Messages/Messages";
-import {addMesActionCreator, updateNewMesActionCreator} from "../../redux/state";
+import {addMesActionCreator, updateNewMesActionCreator} from "../../redux/dialogs-reducer";
+
 
 const Dialogs = (props) => {
     let dialogsElements = props.dialogsPage.dialogsData.map(dialog => <DialogItem name={dialog.name} id={dialog.id}/>);
 
     let messagesElements = props.dialogsPage.messagesData.map(message => <Messages message={message}/>);
 
-    let newMesEl = React.createRef();
-
     let addMes = () =>{
-        debugger;
         props.dispatch(addMesActionCreator());
     }
 
-    let onMesChange = () =>{
-        let text = newMesEl.current.value;
+    let onMesChange = (e) =>{
+        let text = e.target.value;
         props.dispatch(updateNewMesActionCreator(text));
     }
 
@@ -33,7 +31,7 @@ const Dialogs = (props) => {
                 {messagesElements}
                 </div>
                 <div className={cls.message_input}>
-                    <textarea onChange={onMesChange} title="Отправить" placeholder="Сообщение" ref={newMesEl} value={props.dialogsPage.newMesText} />
+                    <textarea onChange={onMesChange} title="Отправить" placeholder="Сообщение" value={props.dialogsPage.newMesText} />
                     <button onClick={addMes}>Отправить</button>
                 </div>
             </div>
