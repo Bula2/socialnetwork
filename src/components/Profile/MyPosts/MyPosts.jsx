@@ -1,19 +1,18 @@
 import cls from "./MyPosts.module.scss";
 import Post from "./Posts/Post";
 import React from "react";
-import {addPostActionCreator, updateNewPostActionCreator} from "../../../redux/profile-reducer";
 
 const MyPosts = (props) => {
 
     let postElements = props.postData.map(post => <Post message={post.post} likes={post.likes}/>);
 
-    let addPost = () => {
-        props.dispatch(addPostActionCreator());
+    let onAddPost = () => {
+        props.addPost();
     }
 
     let onPostChange = (e) =>{
         let text = e.target.value;
-        props.dispatch(updateNewPostActionCreator(text));
+        props.updateNewPostText(text);
     }
 
     return (
@@ -21,7 +20,7 @@ const MyPosts = (props) => {
             <div className={cls.make_posts}>
                 <span>Мои посты</span>
                 <textarea onChange={onPostChange} placeholder="Новый пост" title="Новый пост" value={props.newPostText}/>
-                <button title="Опубликовать" onClick={addPost}>Опубликовать</button>
+                <button title="Опубликовать" onClick={onAddPost}>Опубликовать</button>
             </div>
             <div className={cls.posts}>
                 {postElements}

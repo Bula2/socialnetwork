@@ -1,24 +1,21 @@
-import cls from "./MyPosts.module.scss";
-import Post from "./Posts/Post";
 import React from "react";
 import {addPostActionCreator, updateNewPostActionCreator} from "../../../redux/profile-reducer";
 import MyPosts from "./MyPosts";
 
 const MyPostsContainer = (props) => {
-
-    let postElements = props.postData.map(post => <Post message={post.post} likes={post.likes}/>);
+    let state = props.store.getState();
 
     let addPost = () => {
-        props.dispatch(addPostActionCreator());
+        props.store.dispatch(addPostActionCreator());
     }
 
-    let onPostChange = (e) =>{
-        let text = e.target.value;
-        props.dispatch(updateNewPostActionCreator(text));
+    let onPostChange = (text) => {
+        props.store.dispatch(updateNewPostActionCreator(text));
     }
 
     return (
-        <MyPosts/>
+        <MyPosts addPost={addPost} updateNewPostText={onPostChange} postData={state.profilePage.postData}
+        newPostText={state.profilePage.newPostText}/>
     );
 }
 

@@ -7,17 +7,17 @@ import {addMesActionCreator, updateNewMesActionCreator} from "../../redux/dialog
 
 
 const Dialogs = (props) => {
-    let dialogsElements = props.dialogsPage.dialogsData.map(dialog => <DialogItem name={dialog.name} id={dialog.id}/>);
+    let dialogsElements = props.dialogsData.map(dialog => <DialogItem name={dialog.name} id={dialog.id}/>);
 
-    let messagesElements = props.dialogsPage.messagesData.map(message => <Messages message={message}/>);
+    let messagesElements = props.messagesData.map(message => <Messages message={message}/>);
 
-    let addMes = () =>{
-        props.dispatch(addMesActionCreator());
+    let onAddMes = () =>{
+        props.addMes();
     }
 
     let onMesChange = (e) =>{
         let text = e.target.value;
-        props.dispatch(updateNewMesActionCreator(text));
+        props.onMesChange(text);
     }
 
     return (
@@ -31,8 +31,8 @@ const Dialogs = (props) => {
                 {messagesElements}
                 </div>
                 <div className={cls.message_input}>
-                    <textarea onChange={onMesChange} title="Отправить" placeholder="Сообщение" value={props.dialogsPage.newMesText} />
-                    <button onClick={addMes}>Отправить</button>
+                    <textarea onChange={onMesChange} title="Отправить" placeholder="Сообщение" value={props.newMesText} />
+                    <button onClick={onAddMes}>Отправить</button>
                 </div>
             </div>
         </div>

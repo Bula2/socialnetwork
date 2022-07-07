@@ -1,6 +1,6 @@
 import cls from "./Navbar.module.scss";
 import {NavLink} from "react-router-dom";
-import FriendsList from "./FriendsList/FriendList";
+import FriendsListContainer from "./FriendsList/FriendListContainer";
 
 const Navbar = (props) => {
 
@@ -18,7 +18,7 @@ const Navbar = (props) => {
                                                title="Настройки">Настройки</NavLink></div>
             <div className={cls.item}><NavLink to="/friends" className={clsName => clsName.isActive ? cls.active : ''}
                                                title="Друзья">Друзья</NavLink>
-                <FriendsList state={props.state}/>
+                <FriendsListContainer store={props.store}/>
             </div>
         </nav>
     );
