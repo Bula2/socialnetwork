@@ -1,8 +1,13 @@
 import FriendsList from "./FriendList";
+import {connect} from "react-redux";
 
-const FriendsListContainer = (props) => {
-    return(
-        <FriendsList friendsData={props.store.getState().navbarPage.friendsData}/>
-    );
+let mapStateToProps = (state) =>{
+    return{
+        friendsData: state.navbarPage
+    }
 }
+
+const FriendsListContainer = connect(mapStateToProps)(FriendsList);
+
 export default FriendsListContainer;
+

@@ -11,21 +11,15 @@ import News from "./components/News/News";
 import Friends from "./components/Friends/Friends";
 import DialogsContainer from "./components/Dialogs/DialogsContainer";
 
-const App = (props) => {
+const App = () => {
     return (
         <div className="app-wrapper ">
             <Header/>
-            <Navbar store={props.store}/>
+            <Navbar/>
             <Routes>
                 <Route path="/" element={<Main/>}/>
-                <Route path="/profile" element={<Profile
-                    store={props.store}
-                />
-                }/>
-                <Route path="/dialogs/*" element={<DialogsContainer
-                    store={props.store}
-                />
-                }/>
+                <Route path="/profile" element={<Profile/>}/>
+                <Route path="/dialogs/*" element={<DialogsContainer/>}/>
                 <Route path="/news" element={<News/>}/>
                 <Route path="/music" element={<Music/>}/>
                 <Route path="/settings" element={<Settings/>}/>

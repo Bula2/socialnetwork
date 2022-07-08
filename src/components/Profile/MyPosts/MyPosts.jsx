@@ -3,8 +3,7 @@ import Post from "./Posts/Post";
 import React from "react";
 
 const MyPosts = (props) => {
-
-    let postElements = props.postData.map(post => <Post message={post.post} likes={post.likes}/>);
+    let postElements = props.profilePage.postData.map(post => <Post message={post.post} likes={post.likes}/>);
 
     let onAddPost = () => {
         props.addPost();
@@ -19,7 +18,7 @@ const MyPosts = (props) => {
         <div>
             <div className={cls.make_posts}>
                 <span>Мои посты</span>
-                <textarea onChange={onPostChange} placeholder="Новый пост" title="Новый пост" value={props.newPostText}/>
+                <textarea onChange={onPostChange} placeholder="Новый пост" title="Новый пост" value={props.profilePage.newPostText}/>
                 <button title="Опубликовать" onClick={onAddPost}>Опубликовать</button>
             </div>
             <div className={cls.posts}>
