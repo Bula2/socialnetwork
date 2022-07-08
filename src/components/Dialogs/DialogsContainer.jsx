@@ -3,13 +3,13 @@ import {addMesActionCreator, updateNewMesActionCreator} from "../../redux/dialog
 import Dialogs from "./Dialogs";
 import {connect} from "react-redux";
 
-let mapStateToProps = (state) => {
+const mapStateToProps = (state) => {
     return {
         dialogsPage: state.dialogsPage
     }
 }
 
-let mapDispatchToProps = (dispatch) => {
+const mapDispatchToProps = (dispatch) => {
     return {
         addMes: () => {
             dispatch(addMesActionCreator());

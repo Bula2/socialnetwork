@@ -3,7 +3,7 @@ import Post from "./Posts/Post";
 import React from "react";
 
 const MyPosts = (props) => {
-    let postElements = props.profilePage.postData.map(post => <Post message={post.post} likes={post.likes}/>);
+    let postElements = props.profilePage.postData.map(post => <Post message={post.post} key={post.id} likes={post.likes}/>);
 
     let onAddPost = () => {
         props.addPost();

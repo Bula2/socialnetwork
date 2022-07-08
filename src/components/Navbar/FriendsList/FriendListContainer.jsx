@@ -1,7 +1,7 @@
 import FriendsList from "./FriendList";
 import {connect} from "react-redux";
 
-let mapStateToProps = (state) =>{
+const mapStateToProps = (state) =>{
     return{
         friendsData: state.navbarPage
     }

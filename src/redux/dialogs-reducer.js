@@ -30,23 +30,29 @@ let initialState = {
 };
 
 const dialogsReducer = (state = initialState, action) => {
-
     switch (action.type) {
-        case ADD_MES:
+        case ADD_MES: {
             let newMes = {
                 id: 6,
                 avatar: "/img/avatar.jpg",
                 name: "Булай",
                 message: state.newMesText
             };
-            state.messagesData.push(newMes);
-            state.newMesText = "";
-            break;
-        case UPDATE_NEW_MES_TEXT:
-            state.newMesText = action.newText;
-            break;
+            return {
+                ...state,
+                messagesData: [...state.messagesData, newMes],
+                newMesText: ""
+            }
+        }
+        case UPDATE_NEW_MES_TEXT: {
+            return {
+                ...state,
+                newMesText: action.newText
+            }
+        }
+        default:
+            return state;
     }
-    return (state);
 }
 
 export const addMesActionCreator = () => ({type: ADD_MES})
