@@ -16,6 +16,8 @@ const Navbar = (props) => {
                                                title="Музыка">Музыка</NavLink></div>
             <div className={cls.item}><NavLink to="/settings" className={clsName => clsName.isActive ? cls.active : ''}
                                                title="Настройки">Настройки</NavLink></div>
+            <div className={cls.item}><NavLink to="/users" className={clsName => clsName.isActive ? cls.active : ''}
+                                               title="Все пользователи">Все пользователи</NavLink></div>
             <div className={cls.item}><NavLink to="/friends" className={clsName => clsName.isActive ? cls.active : ''}
                                                title="Друзья">Друзья</NavLink>
                 <FriendsListContainer store={props.store}/>
