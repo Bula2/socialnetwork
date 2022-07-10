@@ -1,10 +1,21 @@
 @import "../../variables";
 
-.users{
+.users {
   @include content;
 }
 
-.item{
+.numbers_page {
+  .selected_page {
+    font-weight: bold;
+  }
+
+  span {
+    margin-left: 2px;
+    cursor: pointer;
+  }
+}
+
+.item {
   width: 60%;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -14,42 +25,48 @@
   margin: 10px;
 }
 
-.left_part{
+.left_part {
   margin-left: 20px;
-  img{
+
+  img {
     width: 70px;
     height: 70px;
     border-radius: 50%;
     border: 1.5px solid black;
   }
-  button{
+
+  button {
     width: 80px;
     height: 40px;
     padding: 4px;
     background-color: $button-color;
     border: 1.5px solid black;
     border-radius: 10px;
-    &:hover{
+
+    &:hover {
       border: 2px solid black;
     }
   }
 }
 
-.central_part{
+.central_part {
   font-size: 1.2em;
-  .name{
+
+  .name {
     margin-top: 10px
   }
-  .status{
+
+  .status {
     margin-top: 60px;
   }
 }
 
-.right_part{
-  .country{
+.right_part {
+  .country {
     margin-top: 10px
   }
-  .city{
+
+  .city {
     margin-top: 10px;
   }
 }
