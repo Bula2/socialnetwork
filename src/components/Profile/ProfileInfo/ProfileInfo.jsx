@@ -10,7 +10,7 @@ const Profile = (props) => {
     return (
         <div className={cls.person}>
             <div>
-                <img className={cls.avatar} src={props.profile.photos.large!=null ? props.profile.photos.large : "/img/avatar.jpg"} alt="Аватарка"/>
+                <img className={cls.avatar} src={props.profile.photos.large!=null ? props.profile.photos.large : "/img/default_user.png"} alt="Аватарка"/>
             </div>
             <div className={cls.person_info}>
                 <NavLink to="/profile" title="Это я">{props.profile.fullName}</NavLink>
