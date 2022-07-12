@@ -1,18 +1,23 @@
 import cls from "./ProfileInfo.module.scss";
 import {NavLink} from "react-router-dom";
+import Preloader from "../../Common/Preloader/Preloader";
 
-const Profile = () => {
+const Profile = (props) => {
+
+    if (!props.profile)
+        return <Preloader/>
+
     return (
         <div className={cls.person}>
             <div>
-                <img className={cls.avatar} src="/img/avatar.jpg" alt="Аватарка"/>
+                <img className={cls.avatar} src={props.profile.photos.large!=null ? props.profile.photos.large : "/img/avatar.jpg"} alt="Аватарка"/>
             </div>
             <div className={cls.person_info}>
-                <NavLink to="/profile" title="Это я">Бимасик Дулаев</NavLink>
+                <NavLink to="/profile" title="Это я">{props.profile.fullName}</NavLink>
                 <div className={cls.person_main_info}>
-                    <span>День рождения: 1 апреля</span>
-                    <span>Город: Санкт-Петербург</span>
-                    <span>Образование: Неуч</span>
+                    <div className={cls.person_main_info_item}><span>Статус: </span>{props.profile.aboutMe}</div>
+                    <div className={cls.person_main_info_item}><span>В поисках работы: </span>{props.profile.lookingForAJob ? "Да" : "Нет"}</div>
+                    <div className={cls.person_main_info_item}><span>Навыки: </span> {props.profile.lookingForAJobDescription}</div>
                 </div>
             </div>
         </div>

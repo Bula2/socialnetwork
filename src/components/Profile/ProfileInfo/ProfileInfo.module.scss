@@ -8,9 +8,11 @@
 }
 
 .avatar {
-  width: 220px;
+  width: 200px;
+  height: 200px;
   margin: 10px;
-  border-radius: 5px;
+  border: 1.5px solid black;
+  border-radius: 50%;
 }
 
 .person_info {
@@ -29,10 +31,14 @@
   .person_main_info {
     margin-top: 50px;
 
-    span {
+    .person_main_info_item {
       display: block;
       font-size: 1.1em;
       margin-bottom: 5px;
+      span{
+        font-size: 1.15em;
+        color: #3b3b3b;
+      }
     }
   }
 }

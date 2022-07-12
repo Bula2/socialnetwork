@@ -1,6 +1,7 @@
 import React from "react";
 import cls from "./Users.module.scss"
 import Preloader from "../Common/Preloader/Preloader";
+import {NavLink} from "react-router-dom";
 
 let Users = (props) => {
 
@@ -21,8 +22,10 @@ let Users = (props) => {
             <div className={cls.preloader}><Preloader/></div> :
             props.users.map(user => <div key={user.id} className={cls.item}>
                 <div className={cls.left_part}>
-                    <img src={user.photos.small != null ? user.photos.small : "/img/f1.jpg"} title={user.name}
+                    <NavLink to={"/profile/" + user.id}>
+                    <img src={user.photos.small != null ? user.photos.small : "/img/default_user.png"} title={user.name}
                          alt={user.name}/>
+                    </NavLink>
                     <div>
                         {user.inFriends ?
                             <button onClick={() => {
