@@ -3,9 +3,10 @@ import {addPostActionCreator, updateNewPostActionCreator} from "../../../redux/p
 import MyPosts from "./MyPosts";
 import {connect} from "react-redux";
 
-const mapStateToProps = (state) => {
+const mapStateToProps = (state, props) => {
     return {
-        profilePage: state.profilePage
+        profilePage: state.profilePage,
+        profile: props.profile
     }
 }
 

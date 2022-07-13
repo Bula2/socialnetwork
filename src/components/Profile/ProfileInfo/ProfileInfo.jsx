@@ -4,9 +4,6 @@ import Preloader from "../../Common/Preloader/Preloader";
 
 const Profile = (props) => {
 
-    if (!props.profile)
-        return <Preloader/>
-
     return (
         <div className={cls.person}>
             <div>

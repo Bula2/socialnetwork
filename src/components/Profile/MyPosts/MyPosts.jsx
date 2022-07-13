@@ -1,10 +1,12 @@
 import cls from "./MyPosts.module.scss";
 import Post from "./Posts/Post";
 import React from "react";
+import Preloader from "../../Common/Preloader/Preloader";
 
 const MyPosts = (props) => {
 
-    let postElements = props.profilePage.postData.map(post => <Post message={post.post} key={post.id} likes={post.likes}/>);
+    let postElements = props.profilePage.postData.map(post =>
+        <Post profile={props.profile} message={post.post} key={post.id} likes={post.likes}/>);
 
     let onAddPost = () => {
         props.addPost();
@@ -14,6 +16,7 @@ const MyPosts = (props) => {
         let text = e.target.value;
         props.updateNewPostText(text);
     }
+
 
     return (
         <div>

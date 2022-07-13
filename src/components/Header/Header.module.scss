@@ -4,20 +4,18 @@
   grid-area: header;
   background: linear-gradient(#cec4ff, $back-color);
   border-radius: 5px;
-
-  img {
-    float: left;
-    width: 55px;
-    margin-left: 70px;
-
-    &:hover {
-      border-bottom: 1.5px solid black;
-      transition: 0.1s ease;
-    }
-  }
-
 }
 
+.app_logo {
+  float: left;
+  width: 55px;
+  margin-left: 70px;
+
+  &:hover {
+    border-bottom: 1.5px solid black;
+    transition: 0.1s ease;
+  }
+}
 
 .header__auth {
   float: right;
@@ -34,4 +32,21 @@
       transition: 0.1s ease;
     }
   }
+}
+
+@media (max-width: 365px) {
+  .header__auth {
+    margin-right: 10px;
+
+    a {
+      font-size: 1.1em;
+      margin-right: 10px;
+    }
+  }
+  .app_logo {
+    width: 45px;
+    margin-left: 20px;
+    margin-top: 5px;
+  }
+
 }

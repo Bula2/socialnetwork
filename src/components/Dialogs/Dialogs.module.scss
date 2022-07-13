@@ -1,7 +1,7 @@
 @import "../../variables";
 
 .dialogs {
-  @include content;
+  height: 100%;
   display: grid;
   grid-template-columns: 2fr 8fr;
 }

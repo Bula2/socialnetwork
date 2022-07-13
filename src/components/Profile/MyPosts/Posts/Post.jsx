@@ -1,10 +1,13 @@
 import cls from "./Post.module.scss";
 import {NavLink} from "react-router-dom";
+import Preloader from "../../../Common/Preloader/Preloader";
+
 
 const Post = (props) => {
+
     return (
         <div className={cls.item}>
-                <NavLink to="/profile"><img src="/img/avatar.jpg" alt=""/>{props.message}</NavLink>
+                <NavLink to="/profile"><img src={props.profile.photos.small!=null ? props.profile.photos.small : "/img/default_user.png"} alt=""/>{props.message}</NavLink>
                 <NavLink to="/profile" className={cls.likes}>&#128077;{props.likes}</NavLink>
         </div>
     );
