@@ -12,6 +12,11 @@ const MyPosts = (props) => {
         props.addPost();
     }
 
+    let onKeyAddPost = (e) => {
+        if (e.keyCode === 13)
+            props.addPost();
+    }
+
     let onPostChange = (e) =>{
         let text = e.target.value;
         props.updateNewPostText(text);
@@ -22,7 +27,7 @@ const MyPosts = (props) => {
         <div>
             <div className={cls.make_posts}>
                 <span>Мои посты</span>
-                <textarea onChange={onPostChange} placeholder="Новый пост" title="Новый пост" value={props.profilePage.newPostText}/>
+                <textarea onKeyDown={onKeyAddPost} onChange={onPostChange} placeholder="Новый пост" title="Новый пост" value={props.profilePage.newPostText}/>
                 <button title="Опубликовать" onClick={onAddPost}>Опубликовать</button>
             </div>
             <div className={cls.posts}>
