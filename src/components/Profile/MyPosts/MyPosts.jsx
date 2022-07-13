@@ -1,7 +1,6 @@
 import cls from "./MyPosts.module.scss";
 import Post from "./Posts/Post";
 import React from "react";
-import Preloader from "../../Common/Preloader/Preloader";
 
 const MyPosts = (props) => {
 

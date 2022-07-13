@@ -1,7 +1,5 @@
 import cls from "./Post.module.scss";
 import {NavLink} from "react-router-dom";
-import Preloader from "../../../Common/Preloader/Preloader";
-
 
 const Post = (props) => {
 

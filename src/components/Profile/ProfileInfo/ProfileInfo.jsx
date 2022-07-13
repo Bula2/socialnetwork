@@ -1,6 +1,5 @@
 import cls from "./ProfileInfo.module.scss";
 import {NavLink} from "react-router-dom";
-import Preloader from "../../Common/Preloader/Preloader";
 
 const Profile = (props) => {
 
