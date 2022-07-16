@@ -13,6 +13,12 @@ const Dialogs = (props) => {
         props.addMes();
     }
 
+    let onKeyAddMes = (e) => {
+        if (e.keyCode === 13){
+            props.addMes();
+        }
+    }
+
     let onMesChange = (e) => {
         let text = e.target.value;
         props.updateNewMesText(text);
@@ -29,7 +35,7 @@ const Dialogs = (props) => {
                     {messagesElements}
                 </div>
                 <div className={cls.message_input}>
-                    <textarea onChange={onMesChange} title="Отправить" placeholder="Сообщение"
+                    <textarea onKeyDown={onKeyAddMes} onChange={onMesChange} title="Отправить" placeholder="Сообщение"
                               value={props.dialogsPage.newMesText}/>
                     <button onClick={onAddMes}>Отправить</button>
                 </div>

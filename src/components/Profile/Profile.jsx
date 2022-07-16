@@ -6,8 +6,7 @@ import React from "react";
 
 const Profile = (props) => {
 
-    if (!props.profile)
-        return <center><Preloader/></center>
+    if (!props.profile) return <center><Preloader/></center>;
 
     return (
         <div className={cls.content}>
