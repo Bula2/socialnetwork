@@ -3,6 +3,7 @@ import ProfileInfo from "./ProfileInfo/ProfileInfo";
 import MyPostsContainer from "./MyPosts/MyPostsContainer";
 import Preloader from "./../Common/Preloader/Preloader";
 import React from "react";
+import {updateUserStatus} from "../../redux/profile-reducer";
 
 const Profile = (props) => {
 
@@ -10,7 +11,7 @@ const Profile = (props) => {
 
     return (
         <div className={cls.content}>
-            <ProfileInfo profile={props.profile}/>
+            <ProfileInfo profile={props.profile} status={props.status} updateUserStatus={props.updateUserStatus} />
             <MyPostsContainer profile={props.profile}/>
         </div>
     );
