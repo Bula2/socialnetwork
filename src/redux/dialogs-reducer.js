@@ -1,5 +1,4 @@
 const ADD_MES = "ADD-MES";
-const UPDATE_NEW_MES_TEXT = "UPDATE-NEW-MES-TEXT";
 
 let initialState = {
     dialogsData: [
@@ -25,8 +24,7 @@ let initialState = {
                 "И стать маленьким принцем, а не диванным рыцарем, " +
                 "Тешить своё любопытство, а не только быт свой."
         },
-    ],
-    newMesText: ""
+    ]
 };
 
 const dialogsReducer = (state = initialState, action) => {
@@ -36,18 +34,11 @@ const dialogsReducer = (state = initialState, action) => {
                 id: 6,
                 avatar: "/img/avatar.jpg",
                 name: "Булай",
-                message: state.newMesText
+                message: action.mes
             };
             return {
                 ...state,
                 messagesData: [...state.messagesData, newMes],
-                newMesText: ""
-            }
-        }
-        case UPDATE_NEW_MES_TEXT: {
-            return {
-                ...state,
-                newMesText: action.newText
             }
         }
         default:
@@ -55,9 +46,7 @@ const dialogsReducer = (state = initialState, action) => {
     }
 }
 
-export const addMesActionCreator = () => ({type: ADD_MES})
+export const addMesActionCreator = (mes) => ({type: ADD_MES, mes})
 
-export const updateNewMesActionCreator = (text) =>
-    ({type : UPDATE_NEW_MES_TEXT, newText : text })
 
 export default dialogsReducer;

@@ -1,4 +1,4 @@
-import {addMesActionCreator, updateNewMesActionCreator} from "../../redux/dialogs-reducer";
+import {addMesActionCreator} from "../../redux/dialogs-reducer";
 import Dialogs from "./Dialogs";
 import {connect} from "react-redux";
 import {withAuthNavigate} from "../../hoc/withAuthNavigate";
@@ -12,11 +12,8 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        addMes: () => {
-            dispatch(addMesActionCreator());
-        },
-        updateNewMesText: (text) => {
-            dispatch(updateNewMesActionCreator(text));
+        addMes: (mes) => {
+            dispatch(addMesActionCreator(mes));
         }
     }
 }

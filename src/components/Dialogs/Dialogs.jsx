@@ -2,26 +2,18 @@ import cls from "./Dialogs.module.scss";
 import React from "react";
 import DialogItem from "./DiaolgItem/DialogItem";
 import Messages from "./Messages/Messages";
+import {Field, reduxForm} from "redux-form";
 
 
 const Dialogs = (props) => {
-    let dialogsElements = props.dialogsPage.dialogsData.map(dialog => <DialogItem name={dialog.name} key={dialog.id} id={dialog.id}/>);
+    let dialogsElements = props.dialogsPage.dialogsData.map(dialog => <DialogItem name={dialog.name} key={dialog.id}
+                                                                                  id={dialog.id}/>);
 
-    let messagesElements = props.dialogsPage.messagesData.map(message => <Messages key={message.id} message={message}/>);
-
-    let onAddMes = () => {
-        props.addMes();
-    }
-
-    let onKeyAddMes = (e) => {
-        if (e.keyCode === 13){
-            props.addMes();
-        }
-    }
-
-    let onMesChange = (e) => {
-        let text = e.target.value;
-        props.updateNewMesText(text);
+    let messagesElements = props.dialogsPage.messagesData.map(message => <Messages key={message.id}
+                                                                                   message={message}/>);
+    
+    let addNewMes = (values) => {
+        props.addMes(values.newMes)
     }
 
     return (
@@ -35,13 +27,23 @@ const Dialogs = (props) => {
                     {messagesElements}
                 </div>
                 <div className={cls.message_input}>
-                    <textarea onKeyDown={onKeyAddMes} onChange={onMesChange} title="Отправить" placeholder="Сообщение"
-                              value={props.dialogsPage.newMesText}/>
-                    <button onClick={onAddMes}>Отправить</button>
+                    <AddMesFormRedux onSubmit={addNewMes}/>
                 </div>
             </div>
         </div>
     );
 }
+
+const AddMesForm = (props) => {
+
+    return (
+        <form onSubmit={props.handleSubmit}>
+            <Field component={"textarea"} name={"newMes"} title="Отправить" placeholder="Сообщение"/>
+            <button>Отправить</button>
+        </form>
+    )
+}
+
+const AddMesFormRedux = reduxForm({form: "dialogAddMesForm"})(AddMesForm)
 
 export default Dialogs;
