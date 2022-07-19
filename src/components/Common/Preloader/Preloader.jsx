@@ -1,8 +1,9 @@
 import cls from "./Preloader.module.scss"
+import spinImg from "./../../../assets/img/spin.svg"
 
 let Preloader = () => {
     return (<>
-            <img src="/img/spin.svg" alt="Загрузка"/>
+            <img src={spinImg} alt="Загрузка"/>
         </>
     )
 }

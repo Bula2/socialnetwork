@@ -2,6 +2,7 @@ import React from "react";
 import cls from "./Users.module.scss"
 import Preloader from "../Common/Preloader/Preloader";
 import {NavLink} from "react-router-dom";
+import defaultUserImg from "./../../assets/img/default_user.png"
 
 let Users = (props) => {
 
@@ -23,7 +24,7 @@ let Users = (props) => {
             props.users.map(user => <div key={user.id} className={cls.item}>
                 <div className={cls.left_part}>
                     <NavLink to={"/profile/" + user.id}>
-                        <img src={user.photos.small != null ? user.photos.small : "/img/default_user.png"}
+                        <img src={user.photos.small != null ? user.photos.small : defaultUserImg}
                              title={user.name}
                              alt={user.name}/>
                     </NavLink>

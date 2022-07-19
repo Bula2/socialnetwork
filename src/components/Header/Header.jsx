@@ -1,10 +1,11 @@
 import cls from "./Header.module.scss";
 import {NavLink} from "react-router-dom";
+import logoImg from "./../../assets/img/logo.png"
 
 const Header = (props) => {
     return (
         <header className={cls.header}>
-            <NavLink to="/"><img className={cls.app_logo} src="/img/logo.png" alt="Slave" title="Slave"/></NavLink>
+            <NavLink to="/"><img className={cls.app_logo} src={logoImg} alt="Slave" title="Slave"/></NavLink>
             <div className={cls.header__auth}>
                 {props.isAuth ?
                     <>

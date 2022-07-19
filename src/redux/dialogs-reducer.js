@@ -1,5 +1,7 @@
-const ADD_MES = "ADD-MES";
+import f2Img from "./../assets/img/f2.jpg";
+import avatarImg from "./../assets/img/avatar.jpg";
 
+const ADD_MES = "ADD-MES";
 let initialState = {
     dialogsData: [
         {id: 1, name: "Мишаня"},
@@ -9,13 +11,13 @@ let initialState = {
         {id: 5, name: "Булай"},
     ],
     messagesData: [
-        {id: 1, avatar: "/img/f2.jpg", name: "Техник", message: "И привет"},
-        {id: 2, avatar: "/img/avatar.jpg", name: "Булай", message: "И пока"},
-        {id: 3, avatar: "/img/f2.jpg", name: "Техник", message: "И все, такие дела"},
-        {id: 4, avatar: "/img/avatar.jpg", name: "Булай", message: "После нас останиться лишь мусор"},
+        {id: 1, avatar: f2Img , name: "Техник", message: "И привет"},
+        {id: 2, avatar: avatarImg, name: "Булай", message: "И пока"},
+        {id: 3, avatar: f2Img , name: "Техник", message: "И все, такие дела"},
+        {id: 4, avatar: avatarImg, name: "Булай", message: "После нас останиться лишь мусор"},
         {
             id: 5,
-            avatar: "/img/f2.jpg",
+            avatar: f2Img ,
             name: "Техник",
             message: "Наша культура — мусор, наше искусство — мусор, " +
                 "Разноцветные стекляшки и блестящие бусы, " +
@@ -32,7 +34,7 @@ const dialogsReducer = (state = initialState, action) => {
         case ADD_MES: {
             let newMes = {
                 id: 6,
-                avatar: "/img/avatar.jpg",
+                avatar: avatarImg,
                 name: "Булай",
                 message: action.mes
             };
