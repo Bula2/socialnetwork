@@ -38,7 +38,8 @@ const AddMesForm = (props) => {
 
     return (
         <form onSubmit={props.handleSubmit}>
-            <Field component={"textarea"} name={"newMes"} title="Отправить" placeholder="Сообщение"/>
+            <Field component={"textarea"} name={"newMes"}
+                   title="Отправить" placeholder="Сообщение"/>
             <button>Отправить</button>
         </form>
     )
