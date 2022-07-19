@@ -5,7 +5,6 @@ import {required} from "../../utils/validators/validators";
 import {connect} from "react-redux";
 import {loginMe, logoutMe} from "../../redux/auth_reducer";
 import {Navigate} from "react-router-dom";
-import {mapStateToPropsFactory} from "react-redux/es/connect/mapStateToProps";
 
 const LoginForm = (props) => {
     return (
@@ -21,8 +20,13 @@ const LoginForm = (props) => {
                        name={"password"} component={Input}
                        validate={[required]}/>
             </div>
-            <div><Field component={Input} name={"rememberMe"} type="checkbox" /> Запомнить меня
+            <div><Field component={Input} name={"rememberMe"} type="checkbox"/> Запомнить меня
             </div>
+            {props.error &&
+                <div className={cls.form_summary_error}>
+                    <span>{props.error}</span>
+                </div>
+            }
             <div>
                 <button>Вход</button>
             </div>
@@ -33,7 +37,7 @@ const LoginForm = (props) => {
 const LoginReduxForm = reduxForm({form: "login"})(LoginForm);
 
 const Login = (props) => {
-    const onSubmit = (formData) =>{
+    const onSubmit = (formData) => {
         props.loginMe(formData.email, formData.password, formData.rememberMe)
     }
 
@@ -44,7 +48,7 @@ const Login = (props) => {
     return (
         <div className={cls.login}>
             <h1>Вход</h1>
-        <LoginReduxForm onSubmit={onSubmit}/>
+            <LoginReduxForm onSubmit={onSubmit}/>
         </div>
     )
 }
