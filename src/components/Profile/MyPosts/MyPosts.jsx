@@ -5,7 +5,24 @@ import {Field, reduxForm} from "redux-form";
 import {maxLengthCreator, required} from "../../../utils/validators/validators";
 import {Textarea} from "../../Common/ControlsForm/ControlForm";
 
-const MyPosts = (props) => {
+const AddPostForm = (props) => {
+
+    return (
+        <form onSubmit={props.handleSubmit}>
+            <Field component={Textarea} name={"newPost"}
+                   title="Новый пост" placeholder="Новый пост"
+                   validate={[required, maxLengthCreator(100)]}
+            />
+            <button title="Опубликовать">Опубликовать</button>
+        </form>
+    )
+}
+
+const AddPostFormRedux = reduxForm({form: "profileAddPostForm"})(AddPostForm)
+
+const MyPosts = React.memo(props => {
+
+    console.log("Hello");
 
     let postElements = props.profilePage.postData.map(post =>
         <Post profile={props.profile} message={post.post} key={post.id} likes={post.likes}/>);
@@ -25,21 +42,6 @@ const MyPosts = (props) => {
             </div>
         </div>
     );
-}
-
-const AddPostForm = (props) => {
-
-    return (
-        <form onSubmit={props.handleSubmit}>
-            <Field component={Textarea} name={"newPost"}
-                   title="Новый пост" placeholder="Новый пост"
-                   validate={[required, maxLengthCreator(100)]}
-            />
-            <button title="Опубликовать">Опубликовать</button>
-        </form>
-    )
-}
-
-const AddPostFormRedux = reduxForm({form: "profileAddPostForm"})(AddPostForm)
+});
 
 export default MyPosts;
