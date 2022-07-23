@@ -1,7 +1,7 @@
 import f2Img from "./../assets/img/f2.jpg";
 import avatarImg from "./../assets/img/avatar.jpg";
 
-const ADD_MES = "ADD-MES";
+const ADD_MES = "dialogs/ADD-MES";
 let initialState = {
     dialogsData: [
         {id: 1, name: "Мишаня"},

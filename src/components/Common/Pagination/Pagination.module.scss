@@ -1,0 +1,16 @@
+@import "../../../variables";
+
+
+.numbers_page {
+  margin: 10px 4px 0 4px;
+  border: 1.5px solid black;
+  border-radius: 10px;
+  padding: 2px;
+  .selected_page {
+    font-weight: bold;
+  }
+  span {
+    margin-left: 10px;
+    cursor: pointer;
+  }
+}

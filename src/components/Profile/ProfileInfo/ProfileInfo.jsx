@@ -1,8 +1,7 @@
 import cls from "./ProfileInfo.module.scss";
 import {NavLink} from "react-router-dom";
-import ProfileStatus from "./ProfileStatus/ProfileStatus";
 import defaultUserImg from "./../../../assets/img/default_user.png"
-import ProfileStatusWithHooks from "./ProfileStatus/ProfileStatusWithHooks";
+import ProfileStatus from "./ProfileStatus/ProfileStatus";
 
 const Profile = (props) => {
 
@@ -14,7 +13,7 @@ const Profile = (props) => {
             <div className={cls.person_info}>
                 <NavLink to="/profile" title="Это я">{props.profile.fullName}</NavLink>
                 <div>
-                    <ProfileStatusWithHooks status={props.status} updateUserStatus={props.updateUserStatus}/>
+                    <ProfileStatus status={props.status} updateUserStatus={props.updateUserStatus}/>
                 </div>
                 <div className={cls.person_main_info}>
                     <div className={cls.person_main_info_item}><span>O cебе: </span>{props.profile.aboutMe}</div>
