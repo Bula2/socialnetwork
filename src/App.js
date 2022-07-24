@@ -24,9 +24,6 @@ class App extends React.Component {
         this.props.initializeApp();
     }
 
-
-
-
     render() {
         if (!this.props.initialized)
             return <center><Preloader/></center>
@@ -56,7 +53,7 @@ class App extends React.Component {
 }
 
 const mapStateToProps = (state) => ({
-    initialized : state.app.initialized
+    initialized: state.app.initialized
 })
 
 export default connect(mapStateToProps, {initializeApp})(App);

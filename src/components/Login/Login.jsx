@@ -9,18 +9,20 @@ import {Navigate} from "react-router-dom";
 const LoginForm = (props) => {
     return (
         <form onSubmit={props.handleSubmit}>
-            <div>
+            <div className={cls.input}>
                 <Field type="text" placeholder={"Логин"}
                        name={"email"} component={Input}
                        validate={[required]}
                 />
             </div>
-            <div>
+            <div className={cls.input}>
                 <Field type="password" placeholder={"Пароль"}
                        name={"password"} component={Input}
                        validate={[required]}/>
             </div>
-            <div><Field component={Input} name={"rememberMe"} type="checkbox"/> Запомнить меня
+            <div className={cls.checkbox}>
+                <Field component={Input} name={"rememberMe"} type="checkbox"/>
+                <span>Запомнить меня</span>
             </div>
             {props.error &&
                 <div className={cls.form_summary_error}>
@@ -47,8 +49,12 @@ const Login = (props) => {
 
     return (
         <div className={cls.login}>
+            <div>
             <h1>Вход</h1>
+            </div>
+            <div>
             <LoginReduxForm onSubmit={onSubmit}/>
+            </div>
         </div>
     )
 }
