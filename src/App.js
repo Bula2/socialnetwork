@@ -36,7 +36,7 @@ class App extends React.Component {
                 <div className="app-center">
                     <React.Suspense fallback={<Preloader/>}>
                         <Routes>
-                            <Route path="/" element={<Main/>}/>
+                            <Route path="" element={<Main/>}/>
                             <Route path="/profile/:userId" element={<ProfileContainer/>}/>
                             <Route path="/profile/*" element={<ProfileContainer/>}/>
                             <Route path="/dialogs/*" element={<DialogsContainer/>}/>
