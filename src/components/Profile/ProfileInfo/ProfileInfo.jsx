@@ -2,29 +2,39 @@ import cls from "./ProfileInfo.module.scss";
 import {NavLink} from "react-router-dom";
 import defaultUserImg from "./../../../assets/img/default_user.png"
 import ProfileStatus from "./ProfileStatus/ProfileStatus";
-import {useEffect} from "react";
+import {useEffect, useState} from "react";
+import ProfileDataForm from "./ProfileDataForm";
 
-const ProfileInfo = ({uploadPhoto, savePhoto, isPhotoUpload,
-                         updateUserStatus, status, profile, isOwner}) => {
+const ProfileInfo = ({
+                         uploadPhoto, savePhoto, isPhotoUpload,
+                         updateUserStatus, status, profile, isOwner,
+                         saveProfile
+                     }) => {
 
-    const showPhotoUploader = () =>{
+    const showPhotoUploader = () => {
         uploadPhoto(true);
     }
 
-    const hidePhotoUploader = () =>{
+    const hidePhotoUploader = () => {
         uploadPhoto(false);
     }
 
     const onPhotoSelected = (e) => {
-        if (e.target.files.length){
+        if (e.target.files.length) {
             savePhoto(e.target.files[0]);
         }
-
     }
+
+    const [editMode, setEditMode] = useState(false);
 
     useEffect(() => {
         uploadPhoto(false);
     }, [])
+
+    const onSubmit = (formData) => {
+        saveProfile(formData);
+        setEditMode(false);
+    }
 
     return (
         <div className={cls.person}>
@@ -32,9 +42,9 @@ const ProfileInfo = ({uploadPhoto, savePhoto, isPhotoUpload,
                 <img className={cls.avatar}
                      src={profile.photos.large != null ? profile.photos.large : defaultUserImg}
                      alt="Аватарка"/>
-                {!isOwner &&
+                {isOwner &&
                     <div className={cls.change_photo}>
-                        { isPhotoUpload ?
+                        {isPhotoUpload ?
                             <input onChange={(e) => {
                                 onPhotoSelected(e);
                                 hidePhotoUploader();
@@ -46,20 +56,51 @@ const ProfileInfo = ({uploadPhoto, savePhoto, isPhotoUpload,
             </div>
             <div className={cls.person_info}>
                 <NavLink to="/profile" title="Это я">{profile.fullName}</NavLink>
-                <div>
+                <div className={cls.profile_status}>
                     <ProfileStatus status={status} updateUserStatus={updateUserStatus}/>
                 </div>
-                <div className={cls.person_main_info}>
-                    <div className={cls.person_main_info_item}><span>O cебе: </span>{profile.aboutMe}</div>
-                    <div className={cls.person_main_info_item}>
-                        <span>В поисках работы: </span>{profile.lookingForAJob ? "Да" : "Нет"}</div>
-                    <div className={cls.person_main_info_item}>
-                        <span>Навыки: </span> {profile.lookingForAJobDescription}</div>
-                </div>
+                {editMode ?
+                    <ProfileDataForm initialValues={profile} profile={profile} onSubmit={onSubmit} setEditMode={setEditMode}/> :
+                    <ProfileData profile={profile} isOwner={isOwner} setEditMode={setEditMode}/>
+                }
             </div>
-
         </div>
     );
+}
+
+const ProfileData = ({profile, isOwner, setEditMode}) => {
+    return (
+        <div className={cls.person_main_info}>
+            <div className={cls.person_main_info_item}>
+                <span>O cебе: </span>{profile.aboutMe}
+            </div>
+            <div className={cls.person_main_info_item}>
+                <span>В поисках работы: </span>{profile.lookingForAJob ? "Да" : "Нет"}
+            </div>
+            <div className={cls.person_main_info_item}>
+                <span>Навыки: </span> {profile.lookingForAJobDescription}
+            </div>
+            <div className={cls.person_main_info_item}>
+                <span>Контакты: </span>
+                {Object.keys(profile.contacts).map(key => {
+                    if (profile.contacts[key])
+                        return <Contact key={key} contactTitle={key} contactValue={profile.contacts[key]}/>
+                })}
+            </div>
+            {isOwner &&
+                <div className={cls.person_main_button}>
+                    <button onClick={() => setEditMode(true)}>Редактировать</button>
+                </div>}
+        </div>
+    )
+}
+
+const Contact = ({contactTitle, contactValue}) => {
+    return (
+        <div className={cls.contact}>
+            <span>{contactTitle}</span> : {contactValue}
+        </div>
+    )
 }
 
 export default ProfileInfo;

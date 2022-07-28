@@ -18,6 +18,12 @@
   &:last-child{
     margin-right: 15px;
   }
+  .we_are_slavers {
+    &:hover {
+      transition: 2s ease-in-out;
+      transform: rotateY(360deg);
+    }
+  }
 }
 
 @media (max-width: 420px) {
@@ -25,3 +31,4 @@
     font-size: 0.8em;
   }
 }
+
