@@ -1,4 +1,4 @@
-import cls from "./Login.module.scss"
+import cls from "./Login.module.scss";
 import {Field, reduxForm} from "redux-form";
 import {Input} from "../Common/ControlsForm/ControlForm";
 import {required} from "../../utils/validators/validators";
@@ -29,6 +29,18 @@ const LoginForm = (props) => {
                     <span>{props.error}</span>
                 </div>
             }
+            {props.captcha &&
+                <div className={cls.captcha}>
+                    <div>
+                        <img src={props.captcha} alt="Captcha"/>
+                    </div>
+                    <div>
+                        <Field placeholder={"Код с картинки"}
+                               name={"captcha"} component={Input}
+                               validate={[required]}/>
+                    </div>
+                </div>
+            }
             <div>
                 <button>Вход</button>
             </div>
@@ -40,7 +52,7 @@ const LoginReduxForm = reduxForm({form: "login"})(LoginForm);
 
 const Login = (props) => {
     const onSubmit = (formData) => {
-        props.loginMe(formData.email, formData.password, formData.rememberMe)
+        props.loginMe(formData.email, formData.password, formData.rememberMe, formData.captcha)
     }
 
     if (props.isAuth) {
@@ -50,17 +62,18 @@ const Login = (props) => {
     return (
         <div className={cls.login}>
             <div>
-            <h1>Вход</h1>
+                <h1>Вход</h1>
             </div>
             <div>
-            <LoginReduxForm onSubmit={onSubmit}/>
+                <LoginReduxForm captcha={props.captcha} onSubmit={onSubmit}/>
             </div>
         </div>
     )
 }
 
 const mapStateToProps = state => ({
-    isAuth: state.auth.isAuth
+    isAuth: state.auth.isAuth,
+    captcha: state.auth.captcha
 });
 
 export default connect(mapStateToProps, {loginMe, logoutMe})(Login);

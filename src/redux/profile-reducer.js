@@ -1,4 +1,5 @@
 import {profileAPI} from "../api/api";
+import {stopSubmit} from "redux-form";
 
 const ADD_POST = "profile/ADD-POST";
 const SET_USER_PROFILE = "profile/SET-USER-PROFILE";
@@ -104,6 +105,14 @@ export const saveProfile = (profile) => async (dispatch, getState) => {
     let response = await profileAPI.saveProfile(profile);
     if (response.data.resultCode === 0)
         dispatch(getProfile(getState().auth.userId))
+    else{
+        let errMessage = response.data.messages.length > 0 ? response.data.messages[0] : "Ошибка сервера";
+        // let index = errMessage.indexOf(">");
+        // let errFieldBefore = errMessage.slice(index+1, -1);
+        // let errField = errFieldBefore[0].toLowerCase() + errFieldBefore.slice(1);
+        dispatch(stopSubmit("edit-profile", {_error: errMessage }));
+        return Promise.reject(errMessage);
+    }
 }
 
 

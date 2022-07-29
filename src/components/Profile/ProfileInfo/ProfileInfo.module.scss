@@ -30,7 +30,7 @@
 }
 
 .person_info {
-  max-width: 250px;
+  width: 250px;
   margin: 20px 10px 0 100px;
   word-wrap: break-word;
 
@@ -45,6 +45,8 @@
 
   .person_main_info {
     margin-top: 30px;
+    //display: grid;
+    //grid-template-columns: 1fr 1fr;
 
     .person_main_info_item {
       display: block;
@@ -113,4 +115,11 @@
 .data_form_buttons{
   display: flex;
   justify-content: space-evenly;
+}
+
+.form_summary_error {
+  width: 250px;
+  border: 2px solid orangered;
+  padding: 5px;
+  color: orangered;
 }

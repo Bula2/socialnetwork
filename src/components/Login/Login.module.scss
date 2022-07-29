@@ -4,13 +4,14 @@
   border: 2px solid orangered;
   padding: 5px;
   color: orangered;
-  width: 10.4%;
+  width: 200px;
 }
 
 .login {
   margin-top: 2%;
   margin-left: 35%;
   margin-right: 10px;
+  width: 220px;
 
   h1 {
     margin-left: 80px;
@@ -29,26 +30,30 @@
       font-size: 1em;
       outline: none;
     }
-    input:focus{
+
+    input:focus {
       border: 2px solid black;
     }
 
   }
-  .checkbox{
+
+  .checkbox {
     display: inline-flex;
     margin-top: 10px;
     margin-left: 2px;
-    input{
+
+    input {
       width: 15px;
       height: 15px;
     }
-    span{
+
+    span {
       margin-left: 10px;
       font-size: 0.9em;
     }
   }
 
-  button{
+  button {
     width: 100px;
     height: 30px;
     margin-left: 60px;
@@ -59,8 +64,37 @@
     font-size: 1em;
   }
 
-  button:hover{
+  button:hover {
     border: 2px solid black;
   }
 
+}
+
+.captcha {
+  margin-left: 5%;
+
+  div {
+    img {
+      margin-top: 10px;
+    }
+
+    input {
+      margin-left: 20px;
+      margin-top: 10px;
+      margin-bottom: 10px;
+      border: 1.5px solid black;
+      border-radius: 10px;
+      padding: 4px;
+      background-color: $main-color;
+      font-size: 1em;
+      outline: none;
+    }
+    span {
+      margin-left: 25px;
+    }
+
+    input:focus {
+      border: 2px solid black;
+    }
+  }
 }
