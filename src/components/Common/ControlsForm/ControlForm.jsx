@@ -7,7 +7,7 @@ const Element = Element => ({input, meta, ...props}) => {
             <div>
                 <Element {...input} {...props} />
             </div>
-            {hasError && <span>{meta.error}</span>}
+            {hasError && <span className={cls.error_text}>{meta.error}</span>}
         </div>
     )
 }

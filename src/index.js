@@ -20,4 +20,3 @@ root.render(
 );
 
 reportWebVitals();
-window.store=store;

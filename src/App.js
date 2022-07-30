@@ -25,6 +25,7 @@ class App extends React.Component {
         this.props.initializeApp();
     }
 
+
     render() {
         if (!this.props.initialized)
             return <center><Preloader/></center>

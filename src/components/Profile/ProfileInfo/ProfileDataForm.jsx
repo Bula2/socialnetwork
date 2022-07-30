@@ -9,36 +9,36 @@ const ProfileDataForm = ({handleSubmit, profile, setEditMode, error}) => {
             <div className={cls.person_main_info}>
                 <div>
                     <div className={cls.person_main_info_item}>
-                        <span>Имя: </span>
+                        <span className={cls.person_main_info_item_text}>Имя: </span>
                         <Field placeholder={"Имя"}
                                name={"fullName"} component={Textarea}
                         />
                     </div>
                     <div className={cls.person_main_info_item}>
-                        <span>O cебе: </span>
+                        <span className={cls.person_main_info_item_text}>O cебе: </span>
                         <Field placeholder={"О себе"}
                                name={"aboutMe"} component={Textarea}
                         />
                     </div>
                     <div className={cls.person_main_info_item}>
-                        <span>В поисках работы: </span>
+                        <span className={cls.person_main_info_item_text}>В поисках работы: </span>
                         <Field type="checkbox"
                                name={"lookingForAJob"} component={Input}
                         />
                     </div>
                     <div className={cls.person_main_info_item}>
-                        <span>Навыки: </span>
+                        <span className={cls.person_main_info_item_text}>Навыки: </span>
                         <Field placeholder={"Навыки"}
                                name={"lookingForAJobDescription"} component={Textarea}/>
                     </div>
                 </div>
                 <div>
                     <div className={cls.person_main_info_item}>
-                        <span>Контакты: </span>
+                        <span className={cls.person_main_info_item_text}>Контакты: </span>
                         {Object.keys(profile.contacts).map(key => {
                             return <div key={key} className={cls.person_main_info_item}>
                                 <div key={key} className={cls.contact}>
-                                    <span>{key}: </span>
+                                    <span className={cls.person_main_info_item_text}>{key}: </span>
                                     <Field key={key} placeholder={key}
                                            name={`contacts.${key}`} component={Input}
                                            className={cls.links_input}

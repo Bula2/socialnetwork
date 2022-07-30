@@ -61,7 +61,7 @@ const profileReducer = (state = initialState, action) => {
             }
         }
 
-        case SAVE_PHOTO_SUCCESS:{
+        case SAVE_PHOTO_SUCCESS: {
             return {
                 ...state,
                 profile: {...state.profile, photos: action.photos}
@@ -105,12 +105,12 @@ export const saveProfile = (profile) => async (dispatch, getState) => {
     let response = await profileAPI.saveProfile(profile);
     if (response.data.resultCode === 0)
         dispatch(getProfile(getState().auth.userId))
-    else{
+    else {
         let errMessage = response.data.messages.length > 0 ? response.data.messages[0] : "Ошибка сервера";
-        // let index = errMessage.indexOf(">");
-        // let errFieldBefore = errMessage.slice(index+1, -1);
-        // let errField = errFieldBefore[0].toLowerCase() + errFieldBefore.slice(1);
-        dispatch(stopSubmit("edit-profile", {_error: errMessage }));
+        let index = errMessage.indexOf(">");
+        let errFieldBefore = errMessage.slice(index + 1, -1);
+        let errField = errFieldBefore[0].toLowerCase() + errFieldBefore.slice(1);
+        dispatch(stopSubmit("edit-profile", {"contacts": {[errField]: errMessage}}));
         return Promise.reject(errMessage);
     }
 }
