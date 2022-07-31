@@ -1,2 +1,40 @@
 @import "../../variables";
 
+.news{
+  h1{
+    margin-left: 40px;
+    margin-top: 20px;
+  }
+}
+
+.news_post{
+  display: flex;
+  justify-content: space-around;
+  border: 1.5px solid $main-color;
+  border-radius: 10px;
+  padding: 10px;
+  margin: 20px auto;
+  width: 90%;
+  .left_part_news{
+    display: grid;
+    grid-template-rows: 0.5fr 6fr 0.5fr;
+    p{
+      margin-top: 10px;
+    }
+    .likes {
+      margin-top: 10px;
+      span{
+      cursor: pointer;
+    }
+    }
+  }
+
+  img{
+    border-radius: 5px;
+    border: 3px solid $main-color;
+    width: 400px;
+    height: 255px;
+    margin-left: 20px;
+  }
+}
+

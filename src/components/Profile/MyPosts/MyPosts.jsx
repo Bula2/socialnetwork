@@ -33,7 +33,9 @@ const MyPosts = React.memo(props => {
         <div>
             <div className={cls.make_posts}>
                 <span>Мои посты</span>
-                <AddPostFormRedux onSubmit={addNewPost}/>
+                {props.isOwner &&
+                    <AddPostFormRedux onSubmit={addNewPost}/>
+                }
             </div>
             <div className={cls.posts}>
                 {postElements}

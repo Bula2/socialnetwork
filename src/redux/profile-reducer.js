@@ -10,11 +10,11 @@ const SAVE_PHOTO_SUCCESS = "profile/SAVE_PHOTO_SUCCESS";
 
 let initialState = {
     postData: [
-        {id: 1, post: "Качeство как клифхэнгер", likes: 2},
-        {id: 2, post: "Музло приносит деньги", likes: 4},
+        {id: 5, post: "Качeство как клифхэнгер", likes: 2},
+        {id: 4, post: "Музло приносит деньги", likes: 4},
         {id: 3, post: "Причем так много", likes: 8},
-        {id: 4, post: "Что ты мог подумать - это в тенге", likes: 16},
-        {id: 5, post: "Проснись и пой, везёт, если тупой", likes: 32},
+        {id: 2, post: "Что ты мог подумать - это в тенге", likes: 16},
+        {id: 1, post: "Проснись и пой, везёт, если тупой", likes: 32},
     ],
     profile: null,
     status: "",
@@ -24,7 +24,7 @@ const profileReducer = (state = initialState, action) => {
     switch (action.type) {
         case ADD_POST: {
             let newPost = {
-                id: 6,
+                id: state.postData.length + 1,
                 post: action.newPost,
                 likes: 0
             };

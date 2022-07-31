@@ -6,7 +6,8 @@ import {connect} from "react-redux";
 const mapStateToProps = (state, props) => {
     return {
         profilePage: state.profilePage,
-        profile: props.profile
+        profile: props.profile,
+        isOwner: props.isOwner
     }
 }
 
