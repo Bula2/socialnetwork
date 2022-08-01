@@ -23,7 +23,10 @@ const AddPostFormRedux = reduxForm({form: "profileAddPostForm"})(AddPostForm)
 const MyPosts = React.memo(props => {
 
     let postElements = props.profilePage.postData.map(post =>
-        <Post key={post.id} profile={props.profile} message={post.post} key={post.id} likes={post.likes}/>);
+        <Post addLike={props.addLike} profile={props.profile}
+              message={post.post} key={post.id} likes={post.likes}
+              likeWasAdd={post.likeWasAdd} id={post.id} delLike={props.delLike}
+        />);
 
     let addNewPost = (values) => {
         props.addPost(values.newPost);

@@ -1,11 +1,25 @@
 import cls from "./Music.module.scss";
+import {connect} from "react-redux";
+import MusicSong from "./MusicSong";
+import "animate.css"
 
-const Music = (props) =>{
+
+const Music = ({musicList}) =>{
+
     return(
         <div className={cls.music}>
-            Музыка
+            <h1 className="animate__animated animate__fadeInRight">Моя Музыка</h1>
+            <div  className={"animate__animated animate__bounceInUp" + " " + cls.songs_list}>
+            {musicList.map(song =>
+                <MusicSong key={song.id} id={song.id} source={song.source} name={song.name}
+                           author={song.author} photo={song.photo}/>
+            )}
+            </div>
         </div>
+
     )
 }
 
-export default Music;
+export default connect((state)=>({
+    musicList: state.music.musicList
+}), {})(Music);

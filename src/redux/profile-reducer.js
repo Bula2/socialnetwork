@@ -7,14 +7,16 @@ const SET_USER_STATUS = "profile/SET_USER_STATUS";
 const DELETE_POST = "profile/DELETE_POST";
 const UPLOAD_PHOTO = "profile/UPLOAD_PHOTO";
 const SAVE_PHOTO_SUCCESS = "profile/SAVE_PHOTO_SUCCESS";
+const ADD_LIKE = "profile/ADD_LIKE";
+const DEL_LIKE = "profile/DEL_LIKE";
 
 let initialState = {
     postData: [
-        {id: 5, post: "Качeство как клифхэнгер", likes: 2},
-        {id: 4, post: "Музло приносит деньги", likes: 4},
-        {id: 3, post: "Причем так много", likes: 8},
-        {id: 2, post: "Что ты мог подумать - это в тенге", likes: 16},
-        {id: 1, post: "Проснись и пой, везёт, если тупой", likes: 32},
+        {id: 5, post: "Качeство как клифхэнгер", likes: 2, likeWasAdd: false},
+        {id: 4, post: "Музло приносит деньги", likes: 4, likeWasAdd: false},
+        {id: 3, post: "Причем так много", likes: 8, likeWasAdd: false},
+        {id: 2, post: "Что ты мог подумать - это в тенге", likes: 16, likeWasAdd: false},
+        {id: 1, post: "Проснись и пой, везёт, если тупой", likes: 32, likeWasAdd: false},
     ],
     profile: null,
     status: "",
@@ -68,17 +70,41 @@ const profileReducer = (state = initialState, action) => {
             }
         }
 
+        case ADD_LIKE: {
+            return {
+                ...state,
+                postData: state.postData.map(post => {
+                    if (post.id === action.id)
+                        return {...post, likes: post.likes + 1, likeWasAdd: true}
+                    return post
+                })
+            }
+        }
+
+        case DEL_LIKE: {
+            return {
+                ...state,
+                postData: state.postData.map(post => {
+                    if (post.id === action.id)
+                        return {...post, likes: post.likes - 1, likeWasAdd: false}
+                    return post
+                })
+            }
+        }
+
         default:
             return state;
     }
 }
 
-export const addPostActionCreator = (newPost) => ({type: ADD_POST, newPost});
+export const addPost = (newPost) => ({type: ADD_POST, newPost});
 export const setUserProfile = (profile) => ({type: SET_USER_PROFILE, profile});
 export const setUserStatus = (status) => ({type: SET_USER_STATUS, status});
 export const deletePost = (id) => ({type: DELETE_POST, id});
 export const uploadPhoto = (isPhotoUpload) => ({type: UPLOAD_PHOTO, isPhotoUpload});
 export const savePhotoSuccess = (photos) => ({type: SAVE_PHOTO_SUCCESS, photos});
+export const addLike = (id) => ({type: ADD_LIKE, id});
+export const delLike = (id) => ({type: DEL_LIKE, id});
 
 export const getProfile = (id) => async (dispatch) => {
     let response = await profileAPI.getProfile(id);

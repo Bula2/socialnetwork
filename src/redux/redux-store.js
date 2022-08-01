@@ -8,6 +8,7 @@ import authReducer from "./auth_reducer";
 import {reducer as formReducer} from "redux-form"
 import appReducer from "./app_reducer";
 import newsReducer from "./news_reducer";
+import musicReducer from "./music-reducer";
 
 let reducers =  combineReducers({
     profilePage: profileReducer,
@@ -17,7 +18,8 @@ let reducers =  combineReducers({
     auth: authReducer,
     form : formReducer,
     app : appReducer,
-    news: newsReducer
+    news: newsReducer,
+    music: musicReducer
 });
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;

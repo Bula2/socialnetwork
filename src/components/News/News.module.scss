@@ -4,13 +4,19 @@
   h1{
     margin-left: 40px;
     margin-top: 20px;
+    --animate-duration: 1.5s;
+    color: #282727;
   }
+}
+
+.news_list{
+  --animate-duration: 2s;
 }
 
 .news_post{
   display: flex;
   justify-content: space-around;
-  border: 1.5px solid $main-color;
+  border: 2px solid $main-color;
   border-radius: 10px;
   padding: 10px;
   margin: 20px auto;
@@ -23,18 +29,19 @@
     }
     .likes {
       margin-top: 10px;
-      span{
-      cursor: pointer;
-    }
     }
   }
 
   img{
-    border-radius: 5px;
-    border: 3px solid $main-color;
+    border-radius: 10px;
+    border: 3px solid black;
     width: 400px;
     height: 255px;
     margin-left: 20px;
   }
+}
+
+.like_was_add{
+  color: #FDD641;
 }
 

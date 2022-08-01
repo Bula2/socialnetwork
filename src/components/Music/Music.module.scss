@@ -1,2 +1,45 @@
 @import "../../variables";
 
+h1{
+  margin-left: 40px;
+  margin-top: 20px;
+  --animate-duration: 1.5s;
+  color: #282727;
+}
+.songs_list{
+  --animate-duration: 2s;
+}
+
+.song{
+  width: 88%;
+  margin: 20px auto;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  border: 2px solid $main-color;
+  border-radius: 10px;
+  padding: 20px;
+}
+
+.info{
+  display: grid;
+  grid-template-rows: 0.5fr 1fr 1fr;
+  span{
+    font-size: 1.2em;
+    margin: 10px;
+  }
+}
+
+.photo{
+  img{
+    width: 300px;
+    border: 2px solid black;
+    border-radius: 20px;
+    height: 200px;
+  }
+}
+
+audio{
+  margin-top: 20px;
+  width: 400px;
+}
+
