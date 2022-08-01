@@ -6,6 +6,7 @@
     margin-top: 20px;
     --animate-duration: 1.5s;
     color: #282727;
+    font-weight: 300;
   }
 }
 
@@ -26,6 +27,11 @@
     grid-template-rows: 0.5fr 6fr 0.5fr;
     p{
       margin-top: 10px;
+      font-weight: normal;
+    }
+    h3{
+      font-weight: 300;
+      font-size: 1.3em;
     }
     .likes {
       margin-top: 10px;

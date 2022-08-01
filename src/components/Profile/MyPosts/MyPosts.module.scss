@@ -1,12 +1,12 @@
 @import "../../../variables";
 
-.make_posts {
-  margin: 40px 0 0 30px;
+.header_my_posts {
+  font-size: 1.9em;
+  margin: 60px 0 0 35px;
+}
 
-  span {
-    margin-left: 4px;
-    font-size: 1.9em;
-  }
+.make_posts {
+  margin: 20px 0 0 30px;
 
   textarea {
     margin-top: 10px;

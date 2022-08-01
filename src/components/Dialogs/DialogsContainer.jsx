@@ -19,6 +19,6 @@ const mapDispatchToProps = (dispatch) => {
 }
 
 export default compose(
-    connect(mapStateToProps, mapDispatchToProps),
-    withAuthNavigate
+    connect(mapStateToProps, mapDispatchToProps)
+    // withAuthNavigate
 )(Dialogs);
