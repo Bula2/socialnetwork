@@ -1,4 +1,5 @@
 import spinImg from "./../../../assets/img/spin.svg"
+import cls from "./Preloader.module.scss"
 
 let Preloader = () => {
     return (<>
