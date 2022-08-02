@@ -1,11 +1,11 @@
 {
   "files": {
-    "main.css": "/socialnetwork/static/css/main.48730a45.css",
-    "main.js": "/socialnetwork/static/js/main.c4ea6ce4.js",
+    "main.css": "/socialnetwork/static/css/main.25c8b2bb.css",
+    "main.js": "/socialnetwork/static/js/main.493e506b.js",
     "static/css/303.41c43f65.chunk.css": "/socialnetwork/static/css/303.41c43f65.chunk.css",
     "static/js/303.bf620acb.chunk.js": "/socialnetwork/static/js/303.bf620acb.chunk.js",
     "static/css/714.ae906e9d.chunk.css": "/socialnetwork/static/css/714.ae906e9d.chunk.css",
-    "static/js/714.61edddde.chunk.js": "/socialnetwork/static/js/714.61edddde.chunk.js",
+    "static/js/714.6c72be85.chunk.js": "/socialnetwork/static/js/714.6c72be85.chunk.js",
     "static/js/787.543e6ce9.chunk.js": "/socialnetwork/static/js/787.543e6ce9.chunk.js",
     "static/media/Unison (Tri Dnya Dozhdya).mp3": "/socialnetwork/static/media/Unison (Tri Dnya Dozhdya).53964b27565a546df489.mp3",
     "static/media/bespoleznye_slova.mp3": "/socialnetwork/static/media/bespoleznye_slova.88fafdfd6bf7c3155477.mp3",
@@ -27,16 +27,16 @@
     "static/media/f4.jpg": "/socialnetwork/static/media/f4.64fadac17a8d604ae305.jpg",
     "static/media/spin.svg": "/socialnetwork/static/media/spin.b4a2fa027cc12f014182b174f2a0ed61.svg",
     "index.html": "/socialnetwork/index.html",
-    "main.48730a45.css.map": "/socialnetwork/static/css/main.48730a45.css.map",
-    "main.c4ea6ce4.js.map": "/socialnetwork/static/js/main.c4ea6ce4.js.map",
+    "main.25c8b2bb.css.map": "/socialnetwork/static/css/main.25c8b2bb.css.map",
+    "main.493e506b.js.map": "/socialnetwork/static/js/main.493e506b.js.map",
     "303.41c43f65.chunk.css.map": "/socialnetwork/static/css/303.41c43f65.chunk.css.map",
     "303.bf620acb.chunk.js.map": "/socialnetwork/static/js/303.bf620acb.chunk.js.map",
     "714.ae906e9d.chunk.css.map": "/socialnetwork/static/css/714.ae906e9d.chunk.css.map",
-    "714.61edddde.chunk.js.map": "/socialnetwork/static/js/714.61edddde.chunk.js.map",
+    "714.6c72be85.chunk.js.map": "/socialnetwork/static/js/714.6c72be85.chunk.js.map",
     "787.543e6ce9.chunk.js.map": "/socialnetwork/static/js/787.543e6ce9.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.48730a45.css",
-    "static/js/main.c4ea6ce4.js"
+    "static/css/main.25c8b2bb.css",
+    "static/js/main.493e506b.js"
   ]
 }
