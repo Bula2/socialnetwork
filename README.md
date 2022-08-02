@@ -1,3 +1,6 @@
+Учебный React + Redux проект социальной сети. Не то, чтобы супер, дальше будет лучше!
+Ссылочка посмотреть: https://bula2.github.io/socialnetwork/
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
