@@ -7,7 +7,9 @@ import "animate.css"
 const News = ({newsList, addLike, delLike}) =>{
     return(
         <div className={cls.news}>
-            <h1 className="animate__animated animate__fadeInRight">Новости</h1>
+            <h1 className={"animate__animated animate__fadeInRight" + " " + cls.news_header}>
+                Новости
+            </h1>
             <div className={"animate__animated animate__bounceInUp" + " " + cls.news_list}>
             {newsList.map(news =>
                 <NewsPost key={news.id} id={news.id} annotation={news.annotation} newsText={news.newsText}

@@ -1,7 +1,7 @@
 import cls from "./Music.module.scss";
 
 
-const MusicSong = ({id, source, name, author, photo}) => {
+const MusicSong = ({source, name, author, photo}) => {
     return (
         <div className={cls.song}>
             <div className={cls.info}>

@@ -47,3 +47,9 @@
   max-width: 1000px;
   margin: 80px 0 40px 40px;
 }
+
+@media (max-width: 720px) {
+    .make_posts{
+      width: 85%;
+    }
+}

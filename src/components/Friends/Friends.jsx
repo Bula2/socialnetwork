@@ -1,11 +1,21 @@
 import cls from "./Friends.module.scss"
+import {connect} from "react-redux";
+import Friend from "./Friend";
 
-const Friends = (props) => {
+const Friends = ({friends}) => {
     return(
       <div className={cls.friends}>
-          Друзья
+          <h1 className={"animate__animated animate__fadeInRight" + " " + cls.friends_header}>Мои друзья</h1>
+          <div className={"animate__animated animate__bounceInUp" + " " + cls.friends_list}>
+              {friends.map(friend => {
+                  return <Friend key={friend.id} avatar={friend.avatar} name={friend.name}/>
+              })
+          }
+          </div>
       </div>
     );
 }
 
-export default Friends;
+export default connect((state)=>({
+    friends: state.friends.friendsList
+}))(Friends);

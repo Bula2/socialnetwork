@@ -12,11 +12,11 @@ const DEL_LIKE = "profile/DEL_LIKE";
 
 let initialState = {
     postData: [
-        {id: 5, post: "Качeство как клифхэнгер", likes: 2, likeWasAdd: false},
-        {id: 4, post: "Музло приносит деньги", likes: 4, likeWasAdd: false},
-        {id: 3, post: "Причем так много", likes: 8, likeWasAdd: false},
-        {id: 2, post: "Что ты мог подумать - это в тенге", likes: 16, likeWasAdd: false},
-        {id: 1, post: "Проснись и пой, везёт, если тупой", likes: 32, likeWasAdd: false},
+        {id: 5, post: "Ведь для любви все низкое, пустое", likes: 2, likeWasAdd: false},
+        {id: 4, post: "В достойное легко пересоздать", likes: 4, likeWasAdd: false},
+        {id: 3, post: "Любовь душой, а не глазами смотрит", likes: 8, likeWasAdd: false},
+        {id: 2, post: "И оттого крылатый Купидон", likes: 16, likeWasAdd: false},
+        {id: 1, post: "Представлен нам слепым и безрассудным", likes: 32, likeWasAdd: false},
     ],
     profile: null,
     status: "",

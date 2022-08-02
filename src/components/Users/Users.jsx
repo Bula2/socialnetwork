@@ -3,6 +3,7 @@ import cls from "./Users.module.scss"
 import Preloader from "../Common/Preloader/Preloader";
 import Pagination from "./../Common/Pagination/Pagination";
 import User from "./User";
+import "animate.css"
 
 let Users = (props) => {
 
@@ -12,7 +13,9 @@ let Users = (props) => {
        />
         {props.isFetching ?
             <div className={cls.preloader}><Preloader/></div> :
-            props.users.map(user => <User user={user} {...props}/>)
+            props.users.map(user => <div className={"animate__animated animate__fadeInUp"}>
+                <User user={user} {...props}/>
+            </div>)
         }
     </div>
 }

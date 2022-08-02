@@ -3,6 +3,8 @@ import React from "react";
 import DialogItem from "./DiaolgItem/DialogItem";
 import Messages from "./Messages/Messages";
 import {Field, reduxForm} from "redux-form";
+import {required} from "../../utils/validators/validators";
+import "animate.css"
 
 
 const Dialogs = (props) => {
@@ -17,7 +19,7 @@ const Dialogs = (props) => {
     }
 
     return (
-        <div className={cls.dialogs}>
+        <div className={cls.dialogs + " " + "animate__animated animate__fadeIn"}>
             <div className={cls.dialogs_items}>
                 <div className={cls.item_head}><h3>Мои сообщения</h3></div>
                 {dialogsElements}
@@ -39,7 +41,8 @@ const AddMesForm = (props) => {
     return (
         <form onSubmit={props.handleSubmit}>
             <Field component={"textarea"} name={"newMes"}
-                   title="Отправить" placeholder="Сообщение"/>
+                   title="Отправить" placeholder="Сообщение"
+            validate={[required]}/>
             <button>Отправить</button>
         </form>
     )

@@ -10,7 +10,7 @@
 .avatar {
   width: 200px;
   height: 200px;
-  margin: 10px;
+  margin: 20px;
   border: 1.5px solid black;
   border-radius: 50%;
 }
@@ -30,8 +30,8 @@
 }
 
 .person_info {
-  width: 250px;
-  margin: 20px 10px 0 100px;
+  width: 30%;
+  margin: 32px 50px 0 12%;
   word-wrap: break-word;
 
   a {
@@ -44,7 +44,7 @@
   }
 
   .person_main_info {
-    margin-top: 30px;
+    margin-top: 40px;
 
     .person_main_info_item {
       display: block;
@@ -113,8 +113,10 @@
 }
 
 .data_form_buttons{
+  max-width: 260px;
   display: flex;
   justify-content: space-evenly;
+  margin-right: 50px;
 }
 
 .form_summary_error {
@@ -122,4 +124,25 @@
   border: 2px solid orangered;
   padding: 5px;
   color: orangered;
+}
+
+@media (max-width: 720px) {
+  .person{
+    width: 80%;
+  }
+  .data_form_buttons{
+    margin-left: 120px;
+    button{
+      margin-right: 10px;
+    }
+  }
+}
+
+  @media (max-width: 1000px) {
+    .data_form_buttons{
+    margin-left: 120px;
+    button{
+      margin-right: 10px;
+    }
+  }
 }

@@ -4,9 +4,9 @@ import f3Img from "./../assets/img/f3.jpg";
 
 let initialState = {
     friendsData: [
-        {id: 1, avatar: f1Img, name: "Егорчик"},
-        {id: 2, avatar: f2Img, name: "Техник"},
-        {id: 3, avatar: f3Img, name: "Мишаня"}
+        {id: 1, avatar: f1Img, name: "Карди"},
+        {id: 2, avatar: f2Img, name: "Винни"},
+        {id: 3, avatar: f3Img, name: "Эрин"}
     ]
 };
 
