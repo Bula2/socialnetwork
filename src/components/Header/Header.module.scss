@@ -10,8 +10,9 @@
   float: left;
   width: 55px;
   margin-left: 70px;
-  border-left: 1px solid $main-color;
-  border-right: 1px solid $main-color;
+  border-radius: 50%;
+  border-left: 1.5px solid $main-color;
+  border-right: 1.5px solid $main-color;
   transition: 1s ease-in-out;
 
   &:hover {

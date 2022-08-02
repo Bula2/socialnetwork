@@ -8,10 +8,9 @@
 }
 
 .login {
-  margin-top: 2%;
-  margin-left: 35%;
-  margin-right: 10px;
-  width: 220px;
+  display: flex;
+  justify-content: center;
+  margin: 30px 10px;
 
   h1 {
     margin-left: 80px;

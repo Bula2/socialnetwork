@@ -62,10 +62,12 @@ const Login = (props) => {
     return (
         <div className={cls.login}>
             <div>
-                <h1>Вход</h1>
-            </div>
-            <div>
-                <LoginReduxForm captcha={props.captcha} onSubmit={onSubmit}/>
+                <div>
+                    <h1>Вход</h1>
+                </div>
+                <div>
+                    <LoginReduxForm captcha={props.captcha} onSubmit={onSubmit}/>
+                </div>
             </div>
         </div>
     )
