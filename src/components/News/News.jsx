@@ -10,7 +10,7 @@ const News = ({newsList, addLike, delLike}) =>{
             <h1 className={"animate__animated animate__fadeInRight" + " " + cls.news_header}>
                 Новости
             </h1>
-            <div className={"animate__animated animate__bounceInUp" + " " + cls.news_list}>
+            <div className={"animate__animated animate__fadeIn" + " " + cls.news_list}>
             {newsList.map(news =>
                 <NewsPost key={news.id} id={news.id} annotation={news.annotation} newsText={news.newsText}
                           newsPhoto={news.newsPhoto} likes={news.likes} addLike={addLike}

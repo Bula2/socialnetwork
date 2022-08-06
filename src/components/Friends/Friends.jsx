@@ -6,7 +6,7 @@ const Friends = ({friends}) => {
     return(
       <div className={cls.friends}>
           <h1 className={"animate__animated animate__fadeInRight" + " " + cls.friends_header}>Мои друзья</h1>
-          <div className={"animate__animated animate__bounceInUp" + " " + cls.friends_list}>
+          <div className={"animate__animated animate__fadeIn" + " " + cls.friends_list}>
               {friends.map(friend => {
                   return <Friend key={friend.id} avatar={friend.avatar} name={friend.name}/>
               })

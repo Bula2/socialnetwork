@@ -13,7 +13,7 @@ const AddPostForm = (props) => {
                    title="Новый пост" placeholder="Новый пост"
                    validate={[required, maxLengthCreator(100)]}
             />
-            <button title="Опубликовать">Опубликовать</button>
+            <button disabled={!!props.error} title="Опубликовать">Опубликовать</button>
         </form>
     )
 }

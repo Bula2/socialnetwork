@@ -13,7 +13,7 @@ let Users = (props) => {
        />
         {props.isFetching ?
             <div className={cls.preloader}><Preloader/></div> :
-            props.users.map(user => <div className={"animate__animated animate__fadeInUp"}>
+            props.users.map(user => <div className={"animate__animated animate__fadeIn"}>
                 <User user={user} {...props}/>
             </div>)
         }

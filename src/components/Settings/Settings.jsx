@@ -8,7 +8,7 @@ const Settings = () =>{
             <h1 className={"animate__animated animate__fadeInRight" + " " + cls.setting_header}>
                 Настройки
             </h1>
-            <div className={cls.setting_list + " " + "animate__animated animate__bounceInUp"}>
+            <div className={cls.setting_list + " " + "animate__animated animate__fadeIn"}>
                 <div><NavLink to="">Настройки профиля</NavLink></div>
                 <div><NavLink to="">Настройки конфиденциальности</NavLink></div>
                 <div><NavLink to="">Настройки контента</NavLink></div>
