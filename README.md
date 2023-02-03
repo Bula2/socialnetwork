@@ -2,7 +2,7 @@
 Ссылочка посмотреть: https://bula2.github.io/socialnetwork/ \
 Данные для входа: \
 Логин: dmitrii.test.slave@gmail.com \
-Пароль: slaveTestacc777 
+Пароль: ssppoorrtt58 
 
 # Getting Started with Create React App
 
