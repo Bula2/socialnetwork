@@ -7,7 +7,7 @@ const Footer = () => {
         <footer className={cls.footer}>
             <div className={cls.footer_text}>
                 <NavLink to="/" title="Все права защищены">Все права защищены &copy;</NavLink>
-                <NavLink className={cls.we_are_slavers} to="/" title="We are Slavers">We are here</NavLink>
+                <NavLink className={cls.we_are_slare} to="/" title="We are slare">We are here</NavLink>
                 <NavLink to="/" title="Пользовательское соглашение">Пользовательское соглашение</NavLink>
             </div>
         </footer>
